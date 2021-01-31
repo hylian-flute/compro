@@ -1,0 +1,1 @@
+docker run -it --rm -e USER=Charines -v "$(pwd):/home/app" -w /home/app rust /bin/bash ./script/run.sh $args[0].Replace("\", "/")
