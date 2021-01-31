@@ -1,2 +1,4 @@
-cp $1 ./src/main.rs
-cargo run
+cp $1 ./src/main.rs && \
+  cargo build && \
+  echo ">>" && \
+  ./target/debug/compro
