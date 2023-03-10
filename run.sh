@@ -13,5 +13,5 @@ docker run \
   -v "$PWD"/Cargo.toml:/usr/src/myapp/Cargo.toml:ro \
   -v "$PWD"/"$SOURCE_FILE":/usr/src/myapp/src/main.rs:ro \
   -w /usr/src/myapp \
-  rust:latest \
+  rust:1.42.0-slim \
   bash -c "cargo build --release --offline && echo '>>' &&./target/release/main"
