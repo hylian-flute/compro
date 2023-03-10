@@ -16,7 +16,7 @@ impl Input {
   }
 }
 
-fn main() {
+pub fn main() {
   let mut input = Input::new();
   let n: usize = input.get().parse().unwrap();
   let q: i64 = input.get().parse().unwrap();

@@ -16,9 +16,8 @@ impl Input {
   }
 }
 
-fn main() {
+pub fn main() {
   let mut input = Input::new();
   let s: String = input.get().parse().unwrap();
   println!("{}", &s.to_uppercase());
 }
-
