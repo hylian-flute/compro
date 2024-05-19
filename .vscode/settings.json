@@ -1,0 +1,6 @@
+{
+  "[rust]": {
+    "editor.indentSize": 4,
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  }
+}
