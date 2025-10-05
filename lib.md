@@ -4,7 +4,7 @@
 `x` を返す。
 
 ```rs
-fn partition_point_int(left: usize, right: usize, pred: impl Fn(usize) -> bool) -> usize {
+fn partition_point_int(left: i32, right: i32, pred: impl Fn(i32) -> bool) -> i32 {
     let mut left = left;
     let mut right = right;
 
