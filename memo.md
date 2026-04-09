@@ -34,3 +34,43 @@ fn partition_point_int(left: i32, right: i32, pred: impl Fn(i32) -> bool) -> i32
     left
 }
 ```
+
+### ダイクストラ法
+
+```rs
+fn dijkstra(s: usize, v_len: usize, cost: &HashMap<(usize, usize), i32>) -> Vec<i32> {
+    let mut d = vec![i32::MAX; v_len];
+    let mut used = vec![false; v_len];
+    d[s] = 0;
+
+    loop {
+        let mut v = Option::<usize>::None;
+
+        for u in 0..v_len {
+            if !used[u]
+                && match v {
+                    Some(some_v) => d[u] < d[some_v],
+                    None => true,
+                }
+            {
+                v = Some(u);
+            }
+        }
+
+        if let Some(some_v) = v {
+            used[some_v] = true;
+
+            for u in 0..v_len {
+                let key = if some_v < u { (some_v, u) } else { (u, some_v) };
+                if let Some(c) = cost.get(&key) {
+                    d[u] = i32::min(d[u], d[some_v] + c);
+                }
+            }
+        } else {
+            break;
+        }
+    }
+
+    d
+}
+```
