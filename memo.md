@@ -7,7 +7,22 @@
 - `u64` (`usize`) : `1.8 * 10^19`
 - `u128` : `3.4 * 10^38`
 
-## 関数
+## 組み込み関数
+### ソート
+```rust
+// 安定ソート
+vec.sort();
+vec.sort_by_key(|k| k.abs());
+vec.sort_by_cached_key(|k| k.to_string());
+vec.sort_by(|a, b| a.cmp(b));
+
+// 不安定ソート
+vec.sort_unstable();
+vec.sort_unstable_by_key(|k| k.abs()); 
+vec.sort_unstable_by(|a, b| a.cmp(b));
+```
+
+## 頻出関数
 ### 整数の範囲を指定した二分探索
 `x` を `left` 以上 `right` 以下の整数とする。
 `pred` は引数が `x` 未満で常に `true` を返し、それ以上で常に `false` を返す関数。
